@@ -60,22 +60,6 @@ The mechanism is reflexive: rising price → bigger wall → harder to sell down
 ## 3. The Progressive Bid Wall, drawn
 <img width="1440" height="974" alt="image" src="https://github.com/user-attachments/assets/3552122a-8c85-429f-b9ec-6047a1c540ed" />
 
-## 4. The historical numbers
-
-A few datapoints worth knowing, with the caveat that memecoin launchpad metrics move fast and you should treat any single snapshot as a checkpoint, not a steady state.
-
-**The launch.** Flaunch went live on Base on **31 January 2025**, riding the broader Uniswap v4 mainnet launch the same week. Within roughly seven days of going live, Flaunch had launched 2,135 tokens, generated $75.6 million in v4 trading volumes, and paid back 51 ETH. Bankless reported $628,900+ in revenue had been returned to creators and communities just two days after launch.
-
-**Hook dominance.** According to HookRank.io shortly after launch, 24 hooks had been deployed on v4 with the overwhelming majority of TVL ($2.3 million) sitting in Flaunch's hook contracts. Flaunch was the proof-of-concept that hooks weren't just an academic feature — they could anchor a billion-dollar product category.
-
-**Phase 2 milestones.** Per Flaunch's own changelog in their docs, the protocol hit **$1M in cumulative creator revenue** by 23 August 2025, then launched **Groups** (a primitive that lets one anchor coin aggregate fee flows from multiple sub-coins) on 17 November 2025. Solana token bridging via Flaunch Wrap shipped 11 December 2025.
-
-**Lineage.** Flaunch is built by Flayer Labs, which is itself a 2024 merger of **NFTX and FloorDAO**. That history matters because the FLAY token (the protocol governance token) inherited holders from both — the docs note 33.35% of FLAY supply was allocated to NFTX migrants and 16.65% to FloorDAO holders, with 20% controlled by the DAO. The treasury reportedly holds ~$25M including 5 CryptoPunks, 42 Lil Pudgys, an Autoglyph, and various NFTX vault positions.
-
-**FLAY as a lever.** FLAY itself doesn't capture fees by default. There is a governance-controlled fee switch that, if enabled by FLAY voters, would route up to 10% of protocol trading fees to FLAY. As of the most recent search, that switch has not been flipped, and FLAY trades around $0.01–0.02 with a circulating market cap in the single-digit millions of dollars — a small fraction of the volume Flaunch processes. The bull case for FLAY is essentially "the fee switch eventually flips"; the bear case is "the protocol works fine without it ever flipping, so why would holders sacrifice volume for it."
-
-Adding two more sections below — keeping everything above intact.
-
 ## 5. How the v4 hook callbacks actually fire
 
 Uniswap v4 lets a hook contract subscribe to up to 14 callback flags fired by the `PoolManager` at specific moments in the lifecycle of a pool. Most hooks subscribe to one or two of these. Flaunch's `PositionManager` subscribes to **nine**, which is unusually aggressive — it is one of the most callback-dense hooks in production. Here is the exact `getHookPermissions()` from the deployed source:

@@ -59,6 +59,7 @@ The mechanism is reflexive: rising price → bigger wall → harder to sell down
 
 ## 3. The Progressive Bid Wall, drawn
 <img width="1440" height="974" alt="image" src="https://github.com/user-attachments/assets/3552122a-8c85-429f-b9ec-6047a1c540ed" />
+
 ## 4. The historical numbers
 
 A few datapoints worth knowing, with the caveat that memecoin launchpad metrics move fast and you should treat any single snapshot as a checkpoint, not a steady state.
